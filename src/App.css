@@ -1,0 +1,23 @@
+.title {
+  text-align: center;
+
+  font-weight: 600;
+}
+
+.body-container {
+  max-width: 360px;
+  background-color: aliceblue;
+  margin-inline: auto;
+}
+
+.add-title-container {
+  display: flex;
+}
+
+.add-title-label {
+  font-weight: 500;
+}
+
+.add-title-input {
+  flex: 1;
+}
