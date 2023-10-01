@@ -1,6 +1,9 @@
 import Collapse from 'react-bootstrap/Collapse';
 import { useEffect, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { MdOutlinePending } from 'react-icons/md';
+import { TbProgressCheck } from 'react-icons/tb';
+import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5';
 import Form from "react-bootstrap/Form";
 import { formatDate } from './utils/date.js';
 import DatePicker from "react-datepicker";
@@ -54,8 +57,11 @@ function CollapseForm(props) {
     return (
         <div className='todo-list-container'>
             <div className="todo-list-header-container">
-                <div className="header-checkbox">
-                    <input className='checkbox' type="checkbox" checked={toDo.progress === "Completed" ? true : false} onChange={(e) => { props.toggleTodo(toDo.id) }} />
+                <div className="header-icon">
+                    <MdOutlinePending className='pending-icon' style={{ display: toDo.progress === "Pending" ? "initial" : "none" }} />
+                    <TbProgressCheck className='in-progress-icon' style={{ display: toDo.progress === "In Progress" ? "initial" : "none" }} />
+                    <IoCheckmarkDoneCircleOutline className='completed-icon' style={{ display: toDo.progress === "Completed" ? "initial" : "none" }} />
+
                 </div>
 
                 <div className="toDo-title-container">
@@ -87,7 +93,7 @@ function CollapseForm(props) {
                             <span className="respond-label" style={showInputStyle}> {toDo.progress}</span>
                             <Form.Select className='input-container' style={hideInputStyle} aria-label="Default select example" value={progress} onChange={(e) => { setProgress(e.target.value) }}>
                                 <option value="Pending">Pending</option>
-                                <option value="In progress">In progress</option>
+                                <option value="In Progress">In Progress</option>
                                 <option value="Completed">Completed</option>
                             </Form.Select>
                         </div>

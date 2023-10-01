@@ -61,20 +61,6 @@ function App() {
     });
   }
 
-  const toggleTodo = (id) => {
-    setToDo((currentTodos) => {
-      return currentTodos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, progress: "Completed" }
-        }
-
-        return todo;
-      });
-    });
-
-  };
-
-
 
   return (
     <div className="App">
