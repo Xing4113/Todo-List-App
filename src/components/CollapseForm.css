@@ -53,12 +53,8 @@
 
 .delete-btn-container {
   width: 40px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-right: 8px;
+  position: absolute;
+  right: 4px;
 }
 
 .delete-btn {
@@ -108,13 +104,13 @@
 
 .respond-label {
   text-align: center;
-  height: 37.6px;
+  min-height: 37.6px;
   font-size: 17px;
 }
 
 .desc-respond-label {
   width: 90%;
-  height: 37.6px;
+  min-height: 37.6px;
   margin-inline: auto;
   background-color: white;
   padding: 6px 12px 6px 12px;
@@ -125,6 +121,8 @@
 
   margin-top: 5px;
   margin-bottom: 15px;
+
+  word-wrap: break-word;
 }
 
 .desc-input-container {

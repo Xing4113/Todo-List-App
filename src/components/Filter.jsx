@@ -1,5 +1,4 @@
 import React from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi';
 import Dropdown from 'react-bootstrap/Dropdown';
 import "./Filter.css"
 
@@ -12,7 +11,7 @@ export const Filter = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Title</Dropdown.Item>
+                    <Dropdown.Item onClick={() => { }}>Title</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Progress</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Due Date</Dropdown.Item>
                     <Dropdown.Item href="#/action-4">Priority Level</Dropdown.Item>

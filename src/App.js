@@ -20,20 +20,23 @@ function App() {
   }
 
   function addToDo(title) {
-    setToDo((currentTodos) => {
-      return [
-        ...currentTodos,
-        {
-          id: crypto.randomUUID(),
-          title: title,
-          dueDate: formatDate(new Date()),
-          progress: "Pending",
-          createdDate: formatDate(new Date()),
-          desc: "Write Something...",
-          priority: "Low"
-        }
-      ];
-    });
+
+    if (title.trim() !== "") {
+      setToDo((currentTodos) => {
+        return [
+          ...currentTodos,
+          {
+            id: crypto.randomUUID(),
+            title: title,
+            dueDate: formatDate(new Date()),
+            progress: "Pending",
+            createdDate: formatDate(new Date()),
+            desc: "Write Something...",
+            priority: "Low"
+          }
+        ];
+      });
+    }
 
   }
 
@@ -70,7 +73,7 @@ function App() {
 
         <div className='add-title-container'>
           <label className='add-title-label'>Title</label>
-          <input type="text" className="add-title-input" onKeyUp={(e) => { addTitle(e) }} />
+          <input type="text" className="add-title-input" maxLength={40} onKeyUp={(e) => { addTitle(e) }} />
           <button className='add-title-btn' onClick={() => { addToDo(title) }}><GrAdd /></button>
         </div>
 
