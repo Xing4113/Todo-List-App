@@ -4,3 +4,8 @@
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
+
+:root {
+  --bg-color: #30d5c8;
+  --hover-bg-color: #0fc9b9;
+}

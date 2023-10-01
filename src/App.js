@@ -3,7 +3,7 @@ import { GrAdd } from 'react-icons/gr';
 import { useState } from 'react';
 import CollapseForm from './components/CollapseForm';
 import { formatDate } from './components/utils/date.js';
-
+import { Filter } from './components/Filter';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           progress: "Pending",
           createdDate: formatDate(new Date()),
           desc: "Write Something...",
-          priority: "low"
+          priority: "Low"
         }
       ];
     });
@@ -61,11 +61,11 @@ function App() {
     });
   }
 
-  const toggleTodo = (id, isCompleted) => {
+  const toggleTodo = (id) => {
     setToDo((currentTodos) => {
       return currentTodos.map((todo) => {
         if (todo.id === id) {
-          return { ...todo, isCompleted: isCompleted }
+          return { ...todo, progress: "Completed" }
         }
 
         return todo;
@@ -85,9 +85,11 @@ function App() {
         <div className='add-title-container'>
           <label className='add-title-label'>Title</label>
           <input type="text" className="add-title-input" onKeyUp={(e) => { addTitle(e) }} />
-          <button className='add-title-btn' onClick={() => { addToDo(title) }}><GrAdd /> Add</button>
+          <button className='add-title-btn' onClick={() => { addToDo(title) }}><GrAdd /></button>
         </div>
-        
+
+        <Filter />
+
         {todos.map((todo) => {
           return (
             <div className="todo-list-container" key={todo.id}>
