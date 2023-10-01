@@ -81,7 +81,7 @@ function App() {
             <div className="todo-list-container" key={todo.id}>
 
               <div className="todo-detail-container">
-                <CollapseForm toDo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo} updateTodo={updateTodo} />
+                <CollapseForm toDo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo} />
               </div>
 
             </div>
