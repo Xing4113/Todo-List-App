@@ -190,3 +190,25 @@
     box-shadow: rgba(13, 110, 253, 0.25) 0px 0px 0px 4px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .top-container {
+    flex-direction: column;
+
+    margin-bottom: 10px;
+  }
+
+  .label-container {
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 15px;
+    padding-right: 22px;
+  }
+
+  .respond-label {
+    text-align: center;
+    padding: 0px;
+    width: 100px;
+  }
+}

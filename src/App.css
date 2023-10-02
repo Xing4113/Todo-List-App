@@ -2,10 +2,13 @@
   text-align: center;
 
   font-weight: 600;
+  margin-top: 20px;
 }
 
 .body-container {
+  margin-top: 20px;
   max-width: 550px;
+  min-width: 326px;
   margin-inline: auto;
 }
 
