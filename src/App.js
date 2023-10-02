@@ -83,7 +83,7 @@ function App() {
 
         <div className='add-title-container'>
           <label className='add-title-label'>Title</label>
-          <input type="text" className="add-title-input" maxLength={40} onKeyUp={(e) => { addTitle(e) }} />
+          <input type="text" placeholder="Add Task?" className="add-title-input" maxLength={40} onKeyUp={(e) => { addTitle(e) }} />
           <button className='add-title-btn' onClick={() => { addToDo(title) }}><GrAdd /></button>
         </div>
 

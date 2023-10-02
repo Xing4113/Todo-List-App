@@ -114,7 +114,6 @@ function CollapseForm(props) {
                         <div className="desc-respond-label" style={showInputStyle} onClick={inputAppearHandle}>{desc} </div>
                         <div contentEditable suppressContentEditableWarning={true} className='desc-input-container' style={hideInputStyle}
                             onKeyUp={e => {
-                                console.log(e);
                                 setDesc(e.target.textContent)
                                 if (e.key === "Enter" || e.code === "Enter") {
                                     e.preventDefault();
