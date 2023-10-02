@@ -115,6 +115,9 @@ function CollapseForm(props) {
                         <div contentEditable suppressContentEditableWarning={true} className='desc-input-container' style={hideInputStyle}
                             onKeyUp={e => {
                                 setDesc(e.target.textContent)
+
+                            }}
+                            onKeyDown={(e) => {
                                 if (e.key === "Enter" || e.code === "Enter") {
                                     e.preventDefault();
                                     saveBtn();
