@@ -1,15 +1,25 @@
 import './App.css';
 import { GrAdd } from 'react-icons/gr';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CollapseForm from './components/CollapseForm';
 import { formatDate } from './components/utils/date.js';
-import { Filter } from './components/Filter';
-
 
 function App() {
 
   const [title, setTitle] = useState("");
-  const [todos, setToDo] = useState([]);
+  const [todos, setToDo] = useState(() => {
+
+    const localValue = localStorage.getItem("todos");
+
+    if (localValue == null) return [];
+
+    return JSON.parse(localValue);
+  });
+
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos]);
 
   function addTitle(e) {
     setTitle(e.target.value);
@@ -77,8 +87,7 @@ function App() {
           <button className='add-title-btn' onClick={() => { addToDo(title) }}><GrAdd /></button>
         </div>
 
-        <Filter />
-
+        {todos.length === 0 && <h1 style={{ fontWeight: "700", marginTop: "15px", paddingLeft: "20px" }}>No ToDo</h1>}
         {todos.map((todo) => {
           return (
             <div className="todo-list-container" key={todo.id}>
@@ -91,6 +100,7 @@ function App() {
           )
         })}
       </div>
+
     </div>
   );
 }
