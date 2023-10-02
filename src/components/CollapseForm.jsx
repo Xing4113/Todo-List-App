@@ -111,11 +111,10 @@ function CollapseForm(props) {
 
                     <div className="desc-container">
                         <label className="desc-text-label">Description: </label>
-                        <div className="desc-respond-label" style={showInputStyle} onClick={inputAppearHandle}>{desc} </div>
+                        <div className="desc-respond-label" style={showInputStyle} onClick={inputAppearHandle}>{toDo.desc} </div>
                         <div contentEditable suppressContentEditableWarning={true} className='desc-input-container' style={hideInputStyle}
                             onKeyUp={e => {
                                 setDesc(e.target.textContent)
-
                             }}
                             onKeyDown={(e) => {
                                 if (e.key === "Enter" || e.code === "Enter") {
